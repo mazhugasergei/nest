@@ -26,6 +26,7 @@ model Post {
   content   String
   user      User?    @relation(references: [id], fields: [userId], onDelete: SetNull)
   userId    Int?     @map("user_id")
+  updatedAt DateTime @updatedAt @map("updated_at")
   createdAt DateTime @default(now()) @map("created_at")
 
   @@map("post")
